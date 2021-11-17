@@ -5,15 +5,21 @@ html, body {
 
 body {
     height: 100%;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*font-weight: 300;*/
     padding: 0;
     margin: 0;
-    font-size: 14px;
-    line-height: 28px;
+    /*font-size: 14px;*/
+    /*line-height: 28px;*/
     color: #777;
     background: #fff;
     position: relative;
+    font-family: "Nunito Sans",Arial,sans-serif;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #999;
 }
 /*           Font Smoothing      */
 
@@ -1212,9 +1218,6 @@ label small {
     height: 2px;
 }
 
-.header-connect {
-    padding-top: 10px;
-}
 
 .header-call p {
     color: #666666;
@@ -3549,7 +3552,8 @@ ul.footer-blog li {
                 background: #5ea51d;
                 color: #fff
             }
-.nav-text{
+
+.nav-text {
     font-size: 13px;
     padding-top: 1rem;
     padding-bottom: 1.2rem;
@@ -3559,4 +3563,131 @@ ul.footer-blog li {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.top-wrap {
+    background: #06112a;
+}
+
+.py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 0.4rem !important;
+    padding-left: 9%;
+}
+
+.align-items-start {
+    -webkit-box-align: start !important;
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+}
+
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.topper {
+    font-size: 15px;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+}
+
+.justify-content-center {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.topper .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+
+.topper .text {
+    width: calc(100% - 40px );
+}
+
+.pl-3 {
+    padding-left: 1rem !important;
+}
+
+.topper .text .con {
+    margin-bottom: -9px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+    .topper .text .con span:first-child {
+        color: #5ea51d;
+    }
+
+    .topper .text .con span {
+        font-weight: 600;
+        font-size: 13px;
+        color: #fff;
+    }
+
+.topper .text p {
+    margin-bottom: -9px;
+    font-size: 12px;
+}
+
+.topper .text .hr span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.align-items-start {
+    -webkit-box-align: start !important;
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+}
+
+.d-flex {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.row1 {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.topper .icon span {
+    color: #fff;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px /1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
