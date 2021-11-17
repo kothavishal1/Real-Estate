@@ -1750,6 +1750,14 @@ Asside widgets CSS
     border-radius: 50%;
 }
 
+.navbar-brand-css {
+    display: block;
+    width: calc(100% - 90%);
+    position: absolute;
+    top: calc(100% - 92 px );
+    left: 11%;
+}
+
 .testimonial .owl-theme .owl-controls .owl-page span {
     background: #FDC600
 }
