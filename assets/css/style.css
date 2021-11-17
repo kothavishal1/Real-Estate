@@ -840,7 +840,7 @@ label small {
 }
 
 .navbar-nav.navbar-right:last-child {
-    margin-right: 20px
+    margin-right: -3%;
 }
 
 .navbar-brand {
@@ -3549,3 +3549,14 @@ ul.footer-blog li {
                 background: #5ea51d;
                 color: #fff
             }
+.nav-text{
+    font-size: 13px;
+    padding-top: 1rem;
+    padding-bottom: 1.2rem;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: rgba(255,255,255,.7);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
