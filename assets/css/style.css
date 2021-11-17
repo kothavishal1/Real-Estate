@@ -1176,11 +1176,11 @@ label small {
 }
 
     .slider-content h2 {
-        font-size: 40px;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        color: #FDC600;
-        font-weight: 500;
+        font-size: 55px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.1;
+        margin-bottom: 40px;
     }
 
     .slider-content p {
@@ -1204,7 +1204,7 @@ label small {
 }
 
 .slider .owl-theme .owl-controls .owl-page span {
-    background: #FFC600
+    background: #fff
 }
 
 /* Top Header */
@@ -3492,7 +3492,7 @@ ul.footer-blog li {
     padding-top: 10px;
     font-weight: 300;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
-    margin-top: 16%;
+    margin-top: 14%;
     background-color: rgba(0, 0, 0, 0.23);
     border-left: 5px solid rgb(125, 125, 125);
 }
