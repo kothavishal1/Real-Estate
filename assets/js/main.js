@@ -87,11 +87,19 @@ $(document).ready(function () {
         $('#counter1').text('0');
         $('#counter2').text('0');
         $('#counter3').text('0');
+        $('#counter4').text('0');
+        $('#counter5').text('0');
+        $('#counter6').text('0');
+        $('#counter7').text('0');
         setInterval(function () {
             var curval = parseInt($('#counter').text());
             var curval1 = parseInt($('#counter1').text().replace(' ', ''));
             var curval2 = parseInt($('#counter2').text());
             var curval3 = parseInt($('#counter3').text());
+            var curval4 = parseInt($('#counter4').text());
+            var curval5 = parseInt($('#counter5').text());
+            var curval6 = parseInt($('#counter6').text());
+            var curval7 = parseInt($('#counter7').text());
             if (curval <= 1007) {
                 $('#counter').text(curval + 1);
             }
@@ -103,6 +111,18 @@ $(document).ready(function () {
             }
             if (curval3 <= 1022) {
                 $('#counter3').text(curval3 + 1);
+            }
+            if (curval4 <= 50) {
+                $('#counter4').text(curval4 + 1);
+            }
+            if (curval5 <= 210) {
+                $('#counter5').text(curval5 + 1);
+            }
+            if (curval6 <= 45) {
+                $('#counter6').text(curval6 + 1);
+            }
+            if (curval7 <= 1) {
+                $('#counter7').text(curval7 + 1);
             }
         }, 2);
     }, 500);
