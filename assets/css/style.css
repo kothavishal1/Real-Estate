@@ -14,7 +14,7 @@ body {
     color: #777;
     background: #fff;
     position: relative;
-    font-family: "Nunito Sans",Arial,sans-serif;
+    font-family: "Nunito Sans",Arial,sans-serif !important;
     background: #fff;
     font-size: 16px;
     line-height: 1.8;
@@ -1841,6 +1841,7 @@ Asside widgets CSS
 
 .padding-top-40 {
     padding-top: 40px;
+    padding-left: 5%;
 }
 
 .padding-bottom-40 {
@@ -3698,4 +3699,74 @@ ul.footer-blog li {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+.heading-section .subheading {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+    color: #5ea51d;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Nunito Sans",Arial,sans-serif !important;
+    background: #fff;
+    
+}
+
+.heading-section h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: rgba(0,0,0,.8);
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+p {
+    font-family: "Nunito Sans",Arial,sans-serif !important;
+}
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.number {
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.d-block {
+    display: block !important;
+}
+
+ .text p {
+    display: inline-block;
+    font-size: 13px;
+    color: #5ea51d;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.counter-wrap {
+    font-family: "Nunito Sans",Arial,sans-serif !important;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #999;
+}
+
+.breadcrumbs {
+    font-size: 14px;
+    z-index: 99;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.8);
 }
