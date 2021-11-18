@@ -127,6 +127,13 @@ $(document).ready(function () {
         }, 2);
     }, 500);
 
+    $("#orr").click(function () {
+        $('html,body').animate({
+            scrollTop: $("#propertyareascroll").offset().top
+        },
+            'slow');
+    });
+
     function sdf_FTS(_number, _decimal, _separator) {
         var decimal = (typeof (_decimal) != 'undefined') ? _decimal : 2;
         var separator = (typeof (_separator) != 'undefined') ? _separator : '';
