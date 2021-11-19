@@ -3770,3 +3770,16 @@ p {
     text-transform: uppercase;
     color: rgba(255,255,255,.8);
 }
+
+@media all and (min-width:0px) and (max-width: 600px) {
+    .mobile-logo {
+        max-width: 400%;
+    }
+}
+
+@media all and (min-width:600px) and (max-width: 1000px) {
+    .mobile-logo {
+        max-width: 200%;
+    }
+}
+
