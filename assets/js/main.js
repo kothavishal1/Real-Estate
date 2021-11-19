@@ -127,6 +127,8 @@ $(document).ready(function () {
         }, 2);
     }, 500);
 
+
+
     $("#orr").click(function () {
         $('html,body').animate({
             scrollTop: $("#propertyareascroll").offset().top
