@@ -3504,10 +3504,30 @@ ul.footer-blog li {
     padding-top: 10px;
     font-weight: 300;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
-    margin-top: 25%;
+    /*margin-top: 25%;*/
     background-color: rgba(0, 0, 0, 0.23);
-    border-left: 5px solid rgb(125, 125, 125);
+    /*border-left: 5px solid rgb(125, 125, 125);*/
 }
+
+.logo-cite {
+    font-size: 28px;
+    padding-top: 10px;
+    font-weight: 300;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
+    /*margin-top: 25%;*/
+    background-color: rgba(0, 0, 0, 0.23);
+    font-size: 55px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.black {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+}
+
 
 .cite-text {
     padding: 0px 30px 10px 30px;
@@ -3562,7 +3582,7 @@ ul.footer-blog li {
             }
 
 .nav-text {
-    font-size: 13px;
+    font-size: 18px;
     padding-top: 1rem;
     padding-bottom: 1.2rem;
     padding-left: 25px;
