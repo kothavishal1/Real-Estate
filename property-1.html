@@ -2,8 +2,9 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -926,8 +927,8 @@
 
         $(document).ready(function () {
             debugger
-            var excelUrl = "assets/files/Meesho.xlsx";
-            
+            var excelUrl = "assets/files/EAMCET.xlsx";
+
 
             var oReq = new XMLHttpRequest();
             oReq.open('get', excelUrl, true);
@@ -943,19 +944,19 @@
 
                 /* Call XLSX */
                 var workbook = XLSX.read(bstr, { type: "binary" });
-            
-            /* DO SOMETHING WITH workbook HERE */
-            var first_sheet_name = workbook.SheetNames[0];
-            var address_of_cell = 'A1';
 
-            /* Get worksheet */
-            var worksheet = workbook.Sheets[first_sheet_name];
+                /* DO SOMETHING WITH workbook HERE */
+                var first_sheet_name = workbook.SheetNames[0];
+                var address_of_cell = 'A1';
 
-            /* Find desired cell */
-            var desired_cell = worksheet[address_of_cell];
+                /* Get worksheet */
+                var worksheet = workbook.Sheets[first_sheet_name];
 
-            /* Get the value */
-            var desired_value = (desired_cell ? desired_cell.v : undefined);
+                /* Find desired cell */
+                var desired_cell = worksheet[address_of_cell];
+
+                /* Get the value */
+                var desired_value = (desired_cell ? desired_cell.v : undefined);
             };
             oReq.send(null);
 
