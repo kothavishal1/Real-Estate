@@ -942,7 +942,7 @@
                 if (reader.readAsBinaryString) {
                     reader.onload = function (e) {
                         //Read the Excel File data.
-                        var workbook = XLSX.read(data, {
+                        var workbook = XLSX.read(e.target.result, {
                             type: 'binary'
                         });
 
