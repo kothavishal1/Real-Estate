@@ -80,7 +80,6 @@
                                         No.308, Opp: Green Park Hotel
                                         Begumpet, Hyderabad 500016
                                         Telangana State
-                                        <div id="dvExcel"></div>
                                     </p>
                                 </div>
                             </div>
@@ -764,6 +763,7 @@
 
         </div>
     </div>
+    <div id="dvExcel"></div>
 
 
     <!-- Footer area-->
@@ -953,9 +953,9 @@
                         var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
 
                         for (var i = 0; i < excelRows.length; i++) {
-                            $("#itemforClone").clone().prependTo("#itemforClone")
+                            $("#itemforClone").clone().appendTo("#dvExcel")
                         }
-                        ProcessExcel(e.target.result, excelRows);
+                        //ProcessExcel(e.target.result, excelRows);
                     };
                     reader.readAsBinaryString(file);
                 } else {
