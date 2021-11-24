@@ -80,6 +80,7 @@
                                         No.308, Opp: Green Park Hotel
                                         Begumpet, Hyderabad 500016
                                         Telangana State
+                                        <div id="dvExcel"></div>
                                     </p>
                                 </div>
                             </div>
@@ -921,7 +922,8 @@
     <script lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.core.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/CHOOSE_A_VERSION/xlsx.core.min.js"></script>
     <script type="text/javascript" src="excelplus-2.5.min.js"></script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
 
     <script>
 
@@ -934,29 +936,26 @@
             oReq.open('get', excelUrl, true);
             oReq.responseType = 'blob';
             oReq.onload = function () {
-                var arraybuffer = oReq.response;
-
-                /* convert data to binary string */
-                var data = new Uint8Array(arraybuffer);
-                var arr = new Array();
-                for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-                var bstr = arr.join("");
-
-                /* Call XLSX */
-                var workbook = XLSX.read(bstr, { type: "binary" });
-
-                /* DO SOMETHING WITH workbook HERE */
-                var first_sheet_name = workbook.SheetNames[0];
-                var address_of_cell = 'A1';
-
-                /* Get worksheet */
-                var worksheet = workbook.Sheets[first_sheet_name];
-
-                /* Find desired cell */
-                var desired_cell = worksheet[address_of_cell];
-
-                /* Get the value */
-                var desired_value = (desired_cell ? desired_cell.v : undefined);
+                var file = this.response;
+                var reader = new FileReader();
+                //For Browsers other than IE.
+                if (reader.readAsBinaryString) {
+                    reader.onload = function (e) {
+                        ProcessExcel(e.target.result);
+                    };
+                    reader.readAsBinaryString(file);
+                } else {
+                    //For IE Browser.
+                    reader.onload = function (e) {
+                        var data = "";
+                        var bytes = new Uint8Array(e.target.result);
+                        for (var i = 0; i < bytes.byteLength; i++) {
+                            data += String.fromCharCode(bytes[i]);
+                        }
+                        ProcessExcel(data);
+                    };
+                    reader.readAsArrayBuffer(file);
+                }
             };
             oReq.send(null);
 
@@ -976,6 +975,59 @@
                     $('#image-gallery').removeClass('cS-hidden');
                 }
             });
+
+            function ProcessExcel(data) {
+                //Read the Excel File data.
+                var workbook = XLSX.read(data, {
+                    type: 'binary'
+                });
+
+                //Fetch the name of First Sheet.
+                var firstSheet = workbook.SheetNames[0];
+
+                //Read all rows from First Sheet into an JSON array.
+                var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
+
+                //Create a HTML Table element.
+                var table = document.createElement("table");
+                table.border = "1";
+
+                //Add the header row.
+                var row = table.insertRow(-1);
+
+                //Add the header cells.
+                var headerCell = document.createElement("TH");
+                headerCell.innerHTML = "Id";
+                row.appendChild(headerCell);
+
+                headerCell = document.createElement("TH");
+                headerCell.innerHTML = "Name";
+                row.appendChild(headerCell);
+
+                headerCell = document.createElement("TH");
+                headerCell.innerHTML = "Country";
+                row.appendChild(headerCell);
+
+                //Add the data rows from Excel file.
+                for (var i = 0; i < excelRows.length; i++) {
+                    //Add the data row.
+                    var row = table.insertRow(-1);
+
+                    //Add the data cells.
+                    var cell = row.insertCell(-1);
+                    cell.innerHTML = excelRows[i].Id;
+
+                    cell = row.insertCell(-1);
+                    cell.innerHTML = excelRows[i].Name;
+
+                    cell = row.insertCell(-1);
+                    cell.innerHTML = excelRows[i].Country;
+                }
+
+                var dvExcel = document.getElementById("dvExcel");
+                dvExcel.innerHTML = "";
+                dvExcel.appendChild(table);
+            };
         });
 
 
