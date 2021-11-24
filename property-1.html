@@ -917,9 +917,8 @@
     <script src="assets/js/price-range.js"></script>
     <script type="text/javascript" src="assets/js/lightslider.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <script lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.core.min.js"></script>
+
 
 
     <script>
@@ -927,6 +926,7 @@
         $(document).ready(function () {
             debugger
             var url = "https://github.com/kothavishal1/Real-Estate/blob/main/Meesho.xlsx";
+            debugger
             var oReq = new XMLHttpRequest();
             oReq.open("GET", url, true);
             oReq.responseType = "arraybuffer";
@@ -942,6 +942,8 @@
 
                 /* Call XLSX */
                 var workbook = XLSX.read(bstr, { type: "binary" });
+
+                /* DO SOMETHING WITH workbook HERE */
                 var first_sheet_name = workbook.SheetNames[0];
                 var address_of_cell = 'A1';
 
@@ -953,13 +955,18 @@
 
                 /* Get the value */
                 var desired_value = (desired_cell ? desired_cell.v : undefined);
-
             }
+
+            oReq.send();
+
+
+
+            document.body.innerHTML = "workbook";
 
             var name = localStorage.getItem('orrs');
             document.getElementById('name').innerHTML = name.split('~')[1];
             document.getElementById('placeName').innerHTML = name.split('~')[1];
-            
+
             $('#image-gallery').lightSlider({
                 gallery: true,
                 item: 1,
