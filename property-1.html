@@ -933,7 +933,6 @@
             oReq.open('get', excelUrl, true);
             oReq.responseType = 'blob';
             oReq.onload = function () {
-                var blob = oReq.response;
                 var arraybuffer = oReq.response;
 
                 /* convert data to binary string */
@@ -944,19 +943,19 @@
 
                 /* Call XLSX */
                 var workbook = XLSX.read(bstr, { type: "binary" });
+            }
+            /* DO SOMETHING WITH workbook HERE */
+            var first_sheet_name = workbook.SheetNames[0];
+            var address_of_cell = 'A1';
 
-                /* DO SOMETHING WITH workbook HERE */
-                var first_sheet_name = workbook.SheetNames[0];
-                var address_of_cell = 'A1';
+            /* Get worksheet */
+            var worksheet = workbook.Sheets[first_sheet_name];
 
-                /* Get worksheet */
-                var worksheet = workbook.Sheets[first_sheet_name];
+            /* Find desired cell */
+            var desired_cell = worksheet[address_of_cell];
 
-                /* Find desired cell */
-                var desired_cell = worksheet[address_of_cell];
-
-                /* Get the value */
-                var desired_value = (desired_cell ? desired_cell.v : undefined);
+            /* Get the value */
+            var desired_value = (desired_cell ? desired_cell.v : undefined);
             };
             oReq.send(null);
 
