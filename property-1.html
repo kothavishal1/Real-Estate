@@ -255,7 +255,7 @@
 
     <!-- End page header -->
     <!-- property area -->
-    <div class="content-area single-property" style="background-color: #FCFCFC;">
+    <div  id="itemforClone" class="content-area single-property" style="background-color: #FCFCFC;">
         &nbsp;
         <div class="container">
 
@@ -951,6 +951,10 @@
 
                         //Read all rows from First Sheet into an JSON array.
                         var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
+
+                        for (var i = 0; i < excelRows.length; i++) {
+                            $("#itemforClone").clone().prependTo("#itemforClone")
+                        }
                         ProcessExcel(e.target.result, excelRows);
                     };
                     reader.readAsBinaryString(file);
