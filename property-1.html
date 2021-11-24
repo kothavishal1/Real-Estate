@@ -918,15 +918,27 @@
     <script type="text/javascript" src="assets/js/lightslider.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.core.min.js"></script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/CHOOSE_A_VERSION/xlsx.core.min.js"></script>
+    <script type="text/javascript" src="excelplus-2.5.min.js"></script>
 
 
     <script>
 
         $(document).ready(function () {
             debugger
-            var url = "file:///C:/Users/user/source/repos/Real-Estate/assets/files/Meesho.xlsx";
+            var excelUrl = "assets/files/Meesho.xlsx";
             
+
+            var oReq = new XMLHttpRequest();
+            oReq.open('get', excelUrl, true);
+            oReq.responseType = 'blob';
+            oReq.onload = function () {
+                var blob = oReq.response;
+                excelIO.open(blob, LoadSpread, function (message) {
+                    console.log(message);
+                });
+            };
+            oReq.send(null);
 
             var name = localStorage.getItem('orrs');
             document.getElementById('name').innerHTML = name.split('~')[1];
