@@ -941,7 +941,17 @@
                 //For Browsers other than IE.
                 if (reader.readAsBinaryString) {
                     reader.onload = function (e) {
-                        ProcessExcel(e.target.result);
+                        //Read the Excel File data.
+                        var workbook = XLSX.read(data, {
+                            type: 'binary'
+                        });
+
+                        //Fetch the name of First Sheet.
+                        var firstSheet = workbook.SheetNames[0];
+
+                        //Read all rows from First Sheet into an JSON array.
+                        var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
+                        ProcessExcel(e.target.result, excelRows);
                     };
                     reader.readAsBinaryString(file);
                 } else {
@@ -976,36 +986,28 @@
                 }
             });
 
-            function ProcessExcel(data) {
-                //Read the Excel File data.
-                var workbook = XLSX.read(data, {
-                    type: 'binary'
-                });
-
-                //Fetch the name of First Sheet.
-                var firstSheet = workbook.SheetNames[0];
-
-                //Read all rows from First Sheet into an JSON array.
-                var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
+            function ProcessExcel(data, excelRows) {
+               
 
                 //Create a HTML Table element.
                 var table = document.createElement("table");
                 table.border = "1";
+                //S No	PRODUCT NAME	CURRENT PRICE	COMPETITAVE PRICE	TRANSFER PRICE	PURCHASING PRICE	PROFIT	PERCENTAGE
 
                 //Add the header row.
                 var row = table.insertRow(-1);
 
                 //Add the header cells.
                 var headerCell = document.createElement("TH");
-                headerCell.innerHTML = "Id";
+                headerCell.innerHTML = "S No";
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("TH");
-                headerCell.innerHTML = "Name";
+                headerCell.innerHTML = "PRODUCT NAME";
                 row.appendChild(headerCell);
 
                 headerCell = document.createElement("TH");
-                headerCell.innerHTML = "Country";
+                headerCell.innerHTML = "CURRENT PRICE";
                 row.appendChild(headerCell);
 
                 //Add the data rows from Excel file.
