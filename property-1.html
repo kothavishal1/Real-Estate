@@ -188,6 +188,9 @@
                     <!--<span class="subheading">About Us</span>-->
                     <h2 id="placeName" class="mb-4"></h2>
                     <p>
+                        {{description}}
+                    </p>
+                    <!--<p>
                         UID aims at providing a very transparent consultancy and facilitates its clients and customers by taking care of all the legal scrutiny required before attempting to own a property.
                     </p>
 
@@ -202,28 +205,38 @@
                     </p>
                     <p>
                         UID acts as a “bridge” between the infra companies and the end clients by providing the best asset management relationship with absolute financial and legal clarity in completing the deal.
-                    </p>
+                    </p>-->
 
                     <div class="img img-2">
                         <!--<img src="https://preview.colorlib.com/theme/oakberry/images/xabout-1.jpg.pagespeed.ic.YT323mxuBO.webp" />-->
                         <div class="row py-5">
-                            <div class="col-md-4 col-lg-3">
+                            <div class="col-md-6 col-lg-4">
                                 <div class="counter-wrap">
                                     <div class="text">
-                                        <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count1" class="counter" data-count="50">OUR VISION</span></span>
+                                        <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count1" class="counter" data-count="50">HOSPITALS</span></span>
                                         <span>To become India’s most admired, trustworthy, respected and stake holders’ friendly organization, committed to provide our clients “own” the most secured and comfortable properties across the nation.</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-lg-3">
+                            <div class="col-md-6 col-lg-4">
                                 <div class="counter-wrap">
                                     <div class="text">
-                                        <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count2" class="counter">OUR MISSION</span></span>
+                                        <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count2" class="counter">SCHOOLS</span></span>
                                         <span>To create the comprehensive network of marketing infrastructure for various housing projects in India that will bring cities, citizens and properties closer to each other to understand and decide more scientifically to own them.</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-lg-3">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="counter-wrap">
+                                    <div class="text">
+                                        <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count2" class="counter">WORK STATIONS</span></span>
+                                        <span>
+                                            To strengthen and grow to the leadership position by ensuring continual improvements in operational efficiencies quality services at all times.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="col-md-4 col-lg-3">
                                 <div class="counter-wrap">
                                     <div class="text">
                                         <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count2" class="counter">OUR VALUES</span></span>
@@ -232,17 +245,7 @@
                                         </span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-lg-3">
-                                <div class="counter-wrap">
-                                    <div class="text">
-                                        <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count2" class="counter">OUR VALUES</span></span>
-                                        <span>
-                                            To strengthen and grow to the leadership position by ensuring continual improvements in operational efficiencies quality services at all times.
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
 
@@ -520,7 +523,8 @@
                                 let color = COLORS[_.random(COLORS.length - 1)];
                                 let PlaceName = data.PlaceName;
                                 let yds = data.AreaSqYards;
-                                container.append(Mustache.render(template, { color, PlaceName, yds }));
+                                let description = data.Description;
+                                container.append(Mustache.render(template, { color, PlaceName, yds, description }));
                             }
 
                             //$(() => {
