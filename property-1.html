@@ -475,7 +475,7 @@
 
 
 
-                        for (var i = 0; i < excelData.length; i++) {
+                        
 
 
                             //$("#itemforClone").clone().appendTo("#dvExcel")
@@ -508,7 +508,7 @@
                                 $(e.target).closest('.item').remove();
                             });
            // });
-
+                        for (var i = 0; i < excelData.length; i++) {
                             var $clone = $($('#clone').html());
                             $('.PRODUCTNAME', $clone).text(excelData[i].PlaceName);
                             $('#ProjectType', $clone).text(excelData[i].ProjectType);
