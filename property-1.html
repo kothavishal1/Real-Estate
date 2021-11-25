@@ -214,7 +214,7 @@
                                 <div class="counter-wrap">
                                     <div class="text">
                                         <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count1" class="counter" data-count="50">HOSPITALS</span></span>
-                                        <span></span>
+                                        <span id="hospital"></span>
                                     </div>
                                 </div>
                             </div>
@@ -222,7 +222,7 @@
                                 <div class="counter-wrap">
                                     <div class="text">
                                         <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count2" class="counter">SCHOOLS</span></span>
-                                        <span></span>
+                                        <span id="school"></span>
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
                                 <div class="counter-wrap">
                                     <div class="text">
                                         <span style="font-size: 1.7647058823529rem; font-family: 'Yanone Kaffeesatz',sans-serif; text-transform: uppercase;" class="d-block number gradient-text"><span id="count2" class="counter">WORK STATIONS</span></span>
-                                        <span>
+                                        <span id="workstation">
                                             
                                         </span>
                                     </div>
@@ -547,6 +547,9 @@
 
                             var $clone = $($('#clone').html());
                             $('#description').text(excelData[i].Description);
+                            $('#school').text(excelData[i].Schools);
+                            $('#hospital').text(excelData[i].Hospitals);
+                            $('#workstation').text(excelData[i].WorkStations);
                             $('#ProjectType', $clone).text(excelData[i].ProjectType);
                             $('#AreaSqYards', $clone).text(excelData[i].AreaSqYards);
                             //$('.MDT', $clone).text(mdtValue);
