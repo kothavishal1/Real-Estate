@@ -187,8 +187,8 @@
                 <div animated class="col-md-12 padding-top-40 heading-section wow fadeInUp">
                     <!--<span class="subheading">About Us</span>-->
                     <h2 id="placeName" class="mb-4"></h2>
-                    <p>
-                        {{description}}
+                    <p id="description">
+                        
                     </p>
                     <!--<p>
                         UID aims at providing a very transparent consultancy and facilitates its clients and customers by taking care of all the legal scrutiny required before attempting to own a property.
@@ -546,7 +546,7 @@
                             addItem(container, tmpl, excelData[i]);
 
                             var $clone = $($('#clone').html());
-                            $('.PRODUCTNAME', $clone).text(excelData[i].PlaceName);
+                            $('#description').text(excelData[i].Description);
                             $('#ProjectType', $clone).text(excelData[i].ProjectType);
                             $('#AreaSqYards', $clone).text(excelData[i].AreaSqYards);
                             //$('.MDT', $clone).text(mdtValue);
