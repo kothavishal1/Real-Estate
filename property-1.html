@@ -258,7 +258,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class=".itemforClone">
+                <div id="clone">
                     <div id="itemforClone">
                         <div class="product-details">
 
@@ -508,7 +508,7 @@
 
                                 //$("#itemforClone").clone().appendTo("#dvExcel")
 
-                                var $clone = $($('.itemforClone').html());
+                                var $clone = $($('#clone').html());
                                 $('.PRODUCTNAME', $clone).text(excelData[i].PlaceName);
                                 $('#ProjectType', $clone).text(excelData[i].ProjectType);
                                 $('#AreaSqYards', $clone).text(excelData[i].AreaSqYards);
