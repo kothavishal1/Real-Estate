@@ -762,7 +762,7 @@
 
         $(document).ready(function () {
             debugger
-            var excelUrl = "assets/files/Meesho.xlsx";
+            var excelUrl = "assets/files/UID Plots.xlsx";
 
 
             var oReq = new XMLHttpRequest();
@@ -827,7 +827,7 @@
                     //$("#itemforClone").clone().appendTo("#dvExcel")
 
                     var $clone = $($('#itemforClone').html());
-                    $('#PRODUCTNAME', $clone).text(excelRows[i].PRODUCTNAME);
+                    $('#PRODUCTNAME', $clone).text(excelRows[i].Place Name);
                     //$('.MDT', $clone).text(mdtValue);
                     //$('.MWT', $clone).text(mwtValue);
 
