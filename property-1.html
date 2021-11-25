@@ -785,20 +785,7 @@
                         //Read all rows from First Sheet into an JSON array.
                         var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
                         
-                        for (var i = 0; i < excelRows.length; i++) {
-
-                            //$("#itemforClone").clone().appendTo("#dvExcel")
-
-                            var $clone = $($('#itemforClone').html());
-                            $('#PRODUCTNAME', $clone).text(excelRows[i].PRODUCTNAME);
-                            //$('.MDT', $clone).text(mdtValue);
-                            //$('.MWT', $clone).text(mwtValue);
-
-                            // Do something with the clone
-                            $('#dvExcel').append($clone);
-
-
-                        }
+                        ProcessData(excelRows);
                         //ProcessExcel(e.target.result, excelRows);
                     };
                     reader.readAsBinaryString(file);
@@ -833,6 +820,23 @@
                     $('#image-gallery').removeClass('cS-hidden');
                 }
             });
+
+            function ProcessData(excelRows) {
+                for (var i = 0; i < excelRows.length; i++) {
+
+                    //$("#itemforClone").clone().appendTo("#dvExcel")
+
+                    var $clone = $($('#itemforClone').html());
+                    $('#PRODUCTNAME', $clone).text(excelRows[i].PRODUCTNAME);
+                    //$('.MDT', $clone).text(mdtValue);
+                    //$('.MWT', $clone).text(mwtValue);
+
+                    // Do something with the clone
+                    $('#dvExcel').append($clone);
+
+
+                }
+            }
 
             function ProcessExcel(data, excelRows) {
                
