@@ -256,7 +256,7 @@
     <!-- End page header -->
     <!-- property area -->
     <div id="itemforClone">
-        <div>
+        <div id="itemforClone">
             <div class="product-details">
 
                 <h1 id="PRODUCTNAME"></h1>
@@ -468,7 +468,6 @@
     <script>
 
         $(document).ready(function () {
-            debugger
             var excelUrl = "assets/files/UID Plots.xlsx";
             var name = localStorage.getItem('orrs');
             document.getElementById('name').innerHTML = name.split('~')[1];
