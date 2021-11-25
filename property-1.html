@@ -255,11 +255,12 @@
 
     <!-- End page header -->
     <!-- property area -->
-    <div id="container" class="PRODUCTNAME">
+    <div id="container" class="itemforClone">
 
         <div class="product-details">
 
-            <h1 id="ProjectType">CHRISTMAS TREE</h1>
+            <h1 id="PRODUCTNAME"></h1>
+            <h1 id="ProjectType"></h1>
             <span class="hint-star star">
                 <i class="fa fa-star" aria-hidden="true"></i>
                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -492,8 +493,8 @@
 
                         //Read all rows from First Sheet into an JSON array.
                         var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
-                        var excelData = excelRows.filter(c => c.Sno == name.split('~')[0]);
-                        $('#itemforClone').css('display', 'none');
+                        var excelData = excelRows.filter(c => c.SNo == name.split('~')[0]);
+                        $('.itemforClone').css('display', 'none');
                         for (var i = 0; i < excelData.length; i++) {
 
                             //$("#itemforClone").clone().appendTo("#dvExcel")
