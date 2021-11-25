@@ -4007,7 +4007,7 @@ p {
 .container1 {
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(auto-fill, 120 px );
     grid-row-gap: 0.5em;
     grid-column-gap: 1em;
