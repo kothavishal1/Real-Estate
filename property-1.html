@@ -527,7 +527,7 @@
                                 let color = COLORS[_.random(COLORS.length - 1)];
                                 let PlaceName = data.PlaceName;
                                 let yds = data.AreaSqYards;
-                                container.append(Mustache.render(template, { color, num }));
+                                container.append(Mustache.render(template, { color, PlaceName, yds }));
                             }
 
                             //$(() => {
