@@ -794,9 +794,9 @@
                             //$("#itemforClone").clone().appendTo("#dvExcel")
 
                             var $clone = $($('#itemforClone').html());
-                            $('#PRODUCTNAME', $clone).text(excelRows[i].PlaceName);
-                            $('#ProjectType', $clone).text(excelRows[i].ProjectType);
-                            $('#Area(SqYards)', $clone).text(excelRows[i].AreaSqYards);
+                            $('#PRODUCTNAME', $clone).text(excelData[i].PlaceName);
+                            $('#ProjectType', $clone).text(excelData[i].ProjectType);
+                            $('#Area(SqYards)', $clone).text(excelData[i].AreaSqYards);
                             //$('.MDT', $clone).text(mdtValue);
                             //$('.MWT', $clone).text(mwtValue);
 
