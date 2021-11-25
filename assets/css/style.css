@@ -4016,3 +4016,101 @@ p {
 
     .container .item {
     }
+
+
+element.style {
+}
+
+.property-wrap {
+    margin-bottom: 60px;
+    -webkit-box-shadow: 0 5px 21px -14px rgb(0 0 0 / 14%);
+    -moz-box-shadow: 0 5px 21px -14px rgba(0,0,0,.14);
+    box-shadow: 0 5px 21px -14px rgb(0 0 0 / 14%);
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+    .property-wrap .img {
+        display: block;
+        width: 100%;
+        height: 250px;
+        position: relative;
+        z-index: 0;
+    }
+element.style {
+}
+
+.property-wrap .img p.price {
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+    right: 25px;
+}
+
+
+.property-wrap .text {
+    position: relative;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+    background: #fff;
+    padding: 25px;
+}
+    .property-wrap .text .list-team {
+        width: 100%;
+    }
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.property-wrap .text .list-team > div, .property-wrap .text .list-team span {
+    width: 50%;
+}
+
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.property-wrap .text .list-team .img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.property-wrap .img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    position: relative;
+    z-index: 0;
+}
+.property-wrap .text .list-team h3, .property-wrap .text .list-team .h3, .property-wrap .text .list-team span {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0,0,0,.6);
+}
+
+.property-wrap .text h3, .property-wrap .text .h3 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.property-wrap .text .location {
+    font-size: 13px;
+}
+.property-wrap .text ul {
+    padding: 0;
+}
+.property-wrap .text .location i {
+    color: #5ea51d;
+}
