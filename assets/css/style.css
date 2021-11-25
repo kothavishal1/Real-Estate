@@ -3813,9 +3813,9 @@ p {
     box-shadow: 0 15px 30px 1px grey;
     background: rgba(255, 255, 255, 0.90);
     text-align: center;
-    border-radius: 5 px;
+    border-radius: 5px;
     overflow: hidden;
-    margin: 4em 11rem;
+    
     height: 350px;
     width: 517px;
 }
