@@ -300,8 +300,8 @@
 
                     <div class="single-property-wrapper">
                         <div class="single-property-header">
-                            <h1 class="property-title pull-left">Villa in Coral Gables</h1>
-                            <span class="property-price pull-right">$825,000</span>
+                            <h1 id="ProjectType" class="property-title pull-left">Villa in Coral Gables</h1>
+                            <span id="Area(SqYards)" class="property-price pull-right">$825,000</span>
                         </div>
 
                         <!-- <div class="property-meta entry-meta clearfix ">
@@ -383,7 +383,7 @@
 
                         <div class="section additional-details">
 
-                            <h4 class="s-property-title">Additional Details</h4>
+                            <h4 class="s-property-title">Accessibility</h4>
 
                             <ul class="additional-details-list clearfix">
                                 <li>
@@ -793,7 +793,9 @@
                             //$("#itemforClone").clone().appendTo("#dvExcel")
 
                             var $clone = $($('#itemforClone').html());
-                            $('#PRODUCTNAME', $clone).text(excelData[i].PlaceName);
+                            $('#PRODUCTNAME', $clone).text(excelRows[i].PlaceName);
+                            $('#ProjectType', $clone).text(excelRows[i].ProjectType);
+                            $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
                             //$('.MDT', $clone).text(mdtValue);
                             //$('.MWT', $clone).text(mwtValue);
 
@@ -843,6 +845,12 @@
 
                     var $clone = $($('#itemforClone').html());
                     $('#PRODUCTNAME', $clone).text(excelRows[i].PlaceName);
+                    $('#ProjectType', $clone).text(excelRows[i].ProjectType);
+                    $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
+                    $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
+                    $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
+                    $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
+                    
                     //$('.MDT', $clone).text(mdtValue);
                     //$('.MWT', $clone).text(mwtValue);
 
