@@ -3829,7 +3829,7 @@ p {
     padding: 30 px;
     height: 100%;
     float: left;
-    /* width: 54%;
+    
 }
 
 #itemforClone .product-details h1 {
@@ -4012,7 +4012,7 @@ p {
     grid-template-rows: repeat(auto-fill, 120 px );
     grid-row-gap: 0.5em;
     grid-column-gap: 1em;
-    margin: 0px 0 40px 137px;
+    margin: 0px 0 40px 65px;
 }
 
     .container .item {
