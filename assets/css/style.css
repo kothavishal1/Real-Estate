@@ -4114,3 +4114,53 @@ element.style {
 .property-wrap .text .location i {
     color: #5ea51d;
 }
+
+.property-wrap .img p.price span.orig-price {
+    color: #fff;
+}
+
+.property-wrap .img p.price span {
+    font-size: 16px;
+    font-weight: 600;
+    background: #fff;
+    background: #5ea51d;
+    border-radius: 4px;
+    padding: 3px 7px;
+}
+.property-wrap .text .list-team h3, .property-wrap .text .list-team .h3, .property-wrap .text .list-team span {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0,0,0,.6);
+}
+
+.property-wrap .text h3, .property-wrap .text .h3 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.ml-2 {
+    margin-left: 0.5rem !important;
+}
+team span {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0,0,0,.6);
+}
+
+.property-wrap .text .list-team > div, .property-wrap .text .list-team span {
+    width: 50%;
+}
+
+.text-right {
+    text-align: right !important;
+}
+.property-wrap .text h3 a, .property-wrap .text .h3 a {
+    color: #000;
+    font-weight: 600;
+}
+.property-wrap .text ul li {
+    font-size: 16px;
+    margin-right: 10px;
+    display: inline-block;
+    list-style: none;
+}
