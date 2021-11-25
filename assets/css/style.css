@@ -4005,7 +4005,7 @@ p {
 
 
 .container1 {
-    width: 80%;
+    width: 110%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(auto-fill, 120 px );
