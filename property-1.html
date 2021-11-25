@@ -787,7 +787,7 @@
                         
                         for (var i = 0; i < excelRows.length; i++) {
 
-                            $("#itemforClone").clone().appendTo("#dvExcel")
+                            //$("#itemforClone").clone().appendTo("#dvExcel")
 
                             var $clone = $($('#itemforClone').html());
                             $('#PRODUCTNAME', $clone).text(excelRows[i].PRODUCTNAME);
@@ -795,7 +795,7 @@
                             //$('.MWT', $clone).text(mwtValue);
 
                             // Do something with the clone
-                            //$('#target').append($clone);
+                            $('#dvExcel').append($clone);
 
 
                         }
