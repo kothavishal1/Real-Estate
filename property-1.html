@@ -504,7 +504,11 @@
                     $('#image-gallery').removeClass('cS-hidden');
                 }
             });
-
+            // Quick & dirty toggle to demonstrate modal toggle behavior
+            $('.modal-toggle').on('click', function (e) {
+                e.preventDefault();
+                $('.modal').toggleClass('is-visible');
+            });
             function ProcessData(excelRows) {
                 for (var i = 0; i < excelRows.length; i++) {
 
