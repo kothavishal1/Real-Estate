@@ -422,7 +422,12 @@
     <script>
 
         $(document).ready(function () {
-            
+
+            $('.property-wrap').click(function (e) {
+                e.preventDefault();
+                $('.modal').toggleClass('is-visible');
+            });
+
             var excelUrl = "assets/files/UID Plots.xlsx";
             var name = localStorage.getItem('orrs');
             document.getElementById('name').innerHTML = name.split('~')[1];
@@ -505,10 +510,7 @@
                 }
             });
             // Quick & dirty toggle to demonstrate modal toggle behavior
-            $('#modal-toggle').click(function (e) {
-                e.preventDefault();
-                $('.modal').toggleClass('is-visible');
-            });
+            
             function ProcessData(excelRows) {
                 for (var i = 0; i < excelRows.length; i++) {
 
