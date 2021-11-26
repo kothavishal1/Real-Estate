@@ -272,26 +272,24 @@
                             <!--<span class="text-right">2 weeks ago</span>-->
                             <p class="mb-0"><a href="#popup1" class="btn1 btn-primary rounded">Visit Now</a></p>
 
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                            <div class="wrapper">
+                                <button class="modal-toggle">Show modal</button>
+                            </div>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" role="dialog">
-                                <div class="modal-dialog">
-
-                                    <!-- Modal content-->
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Modal Header</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>Some text in the modal.</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
+                            <div class="modal">
+                                <div class="modal-overlay modal-toggle"></div>
+                                <div class="modal-wrapper modal-transition">
+                                    <div class="modal-header">
+                                        <button class="modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 32 32"><use xlink:href="#icon-close"></use></svg></button>
+                                        <h2 class="modal-heading">This is a modal</h2>
                                     </div>
 
+                                    <div class="modal-body">
+                                        <div class="modal-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit eum delectus, libero, accusantium dolores inventore obcaecati placeat cum sapiente vel laboriosam similique totam id ducimus aperiam, ratione fuga blanditiis maiores.</p>
+                                            <button class="modal-toggle">Update</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
