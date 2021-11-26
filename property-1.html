@@ -418,7 +418,7 @@
             var name = localStorage.getItem('orrs');
             document.getElementById('name').innerHTML = name.split('~')[1];
             document.getElementById('placeName').innerHTML = name.split('~')[1];
-
+            $('#itemforClone').css('display', 'none');
             var oReq = new XMLHttpRequest();
             oReq.open('get', excelUrl, true);
             oReq.responseType = 'blob';
@@ -441,10 +441,9 @@
                         var excelData = excelRows.filter(c => c.SNo == name.split('~')[0]);
 
                         //$("#itemforClone").clone().appendTo("#dvExcel")
-                        $('#itemforClone').css('display', 'none');
+                        
                         for (var i = 0; i < excelData.length; i++) {
 
-                            addItem(container, tmpl, excelData[i]);
 
                             var $clone = $($('#itemforClone').html());
                             $('#description').text(excelData[i].Description);
