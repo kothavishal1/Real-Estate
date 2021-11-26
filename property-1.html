@@ -413,7 +413,7 @@
     <script>
 
         $(document).ready(function () {
-            $('#itemforClone').css('display', 'none');
+            
             var excelUrl = "assets/files/UID Plots.xlsx";
             var name = localStorage.getItem('orrs');
             document.getElementById('name').innerHTML = name.split('~')[1];
@@ -441,7 +441,7 @@
                         var excelData = excelRows.filter(c => c.SNo == name.split('~')[0]);
 
                         //$("#itemforClone").clone().appendTo("#dvExcel")
-
+                        $('#itemforClone').css('display', 'none');
                         for (var i = 0; i < excelData.length; i++) {
 
                             addItem(container, tmpl, excelData[i]);
