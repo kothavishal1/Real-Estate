@@ -273,7 +273,7 @@
                             <p class="mb-0"><a href="#popup1" class="btn1 btn-primary rounded">Visit Now</a></p>
 
                             <div class="wrapper">
-                                <button class="modal-toggle">Show modal</button>
+                                <button id="modal-toggle">Show modal</button>
                             </div>
 
                             <div class="modal">
@@ -505,7 +505,7 @@
                 }
             });
             // Quick & dirty toggle to demonstrate modal toggle behavior
-            $('.modal-toggle').on('click', function (e) {
+            $('#modal-toggle').on('click', function (e) {
                 e.preventDefault();
                 $('.modal').toggleClass('is-visible');
             });
