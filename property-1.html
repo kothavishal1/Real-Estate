@@ -494,20 +494,20 @@
                         
                         for (var i = 0; i < excelData.length; i++) {
 
-
-                            var $clone = $($('#itemforClone').html());
                             $('#description').text(excelData[i].Description);
                             $('#school').text(excelData[i].Schools);
                             $('#hospital').text(excelData[i].Hospitals);
                             $('#workstation').text(excelData[i].WorkStations);
+
+                            var $clone = $($('#itemforClone').html());
                             $('#PlaceName', $clone).text(excelData[i].PlaceName);
                             $('#ProjectType', $clone).text(excelData[i].ProjectType);
                             $('.orig-price', $clone).text(excelData[i].AreaSqYards);
+
                             var access = excelData[i].Accesability.split('~');
-                            for (var j = 0; j < access.length; j++)
-                            {
-                                var html = '<span class="col-xs-6 col-sm-8 add-d-title">' + access[j] +'</span><span class="col-xs-6 col-sm-6 col-md-2 add-d-entry" > Yes</span >';
-                                $('#addAccess').append($('#accessibility', $clone).html(html));
+                            for (var j = 0; j < access.length; j++) {
+                                $("#accessibility", $clone).append('<li><span class="col-xs-6 col-sm-8 add-d-title">' + access[j] + '</span><span class="col-xs-6 col-sm-6 col-md-2 add-d-entry" > Yes</span ></li>');
+
                             }
                             
                             //$('.MDT', $clone).text(mdtValue);
