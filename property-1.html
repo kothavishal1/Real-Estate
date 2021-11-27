@@ -456,6 +456,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script>
 
+        openPopup() {
+            $(".custom-model-main").addClass('model-open');
+        }
+
         $(document).ready(function () {
 
             $(".Click-here").on('click', function () {
@@ -562,9 +566,7 @@
             });
             // Quick & dirty toggle to demonstrate modal toggle behavior
 
-            function openPopup() {
-                $(".custom-model-main").addClass('model-open');
-            }
+            
 
             function ProcessData(excelRows) {
                 for (var i = 0; i < excelRows.length; i++) {
