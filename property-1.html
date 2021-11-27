@@ -506,7 +506,8 @@
                             var access = excelData[i].Accesability.split('~');
                             for (var j = 0; j < access.length; j++)
                             {
-                                $('#addAccess').append($('#accessibility', $clone).text(access[j]));
+                                var html = '<span class="col-xs-6 col-sm-8 add-d-title">' + access[j] +'</span><span class="col-xs-6 col-sm-6 col-md-2 add-d-entry" > Yes</span >';
+                                $('#addAccess').append($('#accessibility', $clone).html(html));
                             }
                             
                             //$('.MDT', $clone).text(mdtValue);
