@@ -305,11 +305,10 @@
                             <h4 class="s-property-title">ACCESSIBILITY</h4>
 
                             <ul id="accessibility" class="additional-details-list clearfix">
-                                <li>
+                                <!--<li>
                                     <span class="col-xs-6 col-sm-8 add-d-title">Waterfront</span>
                                     <span class="col-xs-6 col-sm-6 col-md-2 add-d-entry">Yes</span>
-                                </li>
-                                <li id="addAccess"></li>
+                                </li>-->
 
                                 <!--<li>
                                     <span class="col-xs-6 col-sm-8 add-d-title">Built In</span>
@@ -505,8 +504,9 @@
                             $('.orig-price', $clone).text(excelData[i].AreaSqYards);
 
                             var access = excelData[i].Accesability.split('~');
+                            var time = excelData[i].Time.split('~');
                             for (var j = 0; j < access.length; j++) {
-                                $("#accessibility", $clone).append('<li><span class="col-xs-6 col-sm-8 add-d-title">' + access[j] + '</span><span class="col-xs-6 col-sm-6 col-md-2 add-d-entry" > Yes</span ></li>');
+                                $("#accessibility", $clone).append('<li><span class="col-xs-6 col-sm-8 add-d-title">' + access[j] + '</span><span class="col-xs-6 col-sm-6 col-md-2 add-d-entry" >' + time[j] +'</span ></li>');
 
                             }
                             
