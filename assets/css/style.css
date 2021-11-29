@@ -4719,4 +4719,10 @@ form {
 .textarea {
     height: 62px;
 }
-    
+
+@media all and (min-width:0px) and (max-width: 600px) {
+    .container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
+        margin-right: -15px;
+        margin-left: -270px;
+    }
+}
