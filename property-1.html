@@ -344,7 +344,7 @@
 
     <div class="custom-model-main">
         <div class="custom-model-inner">
-            <div class="close-btn">×</div>
+            <div onclick="closePopup" class="close-btn">×</div>
             <div class="custom-model-wrap">
                 <div class="pop-up-content-wrap">
                     <div class="body1">
@@ -353,34 +353,7 @@
                                 <h1 class="h1">Contact us</h1>
                                 <p class="p">Do you have a question? Send us a message and we will respond as soon as possible.</p>
                             </div>
-                            <!--<form id="myForm">
-                                <h4 class="h4">Name</h4>
-                                <input class="input" type="text" name="name">
-                                <h4 class="h4">Mobile No</h4>
-                                <input class="input" type="text" name="mobNo">
-                                <h4 class="h4">Email</h4>
-                                <input class="input" type="text" name="email">
-                                <h4 class="h4">Message</h4>
-                                <textarea class="input textarea"></textarea>
-                                <button onclick="SubForm()" class="button">Send</button>
-                            </form>-->
                             <fieldset>
-                                <!--<form>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                    </div>
-                                    <div class="form-group form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>-->
                                 <form id="form" target="_self" onsubmit="" action="javascript: postToGoogle()">
                                     <fieldset>
                                         <div class="form-group">
@@ -530,6 +503,10 @@
 
         function openPopup() {
             $(".custom-model-main").addClass('model-open');
+        }
+
+        function closePopup () {
+            $(".custom-model-main").removeClass('model-open');
         }
 
         function postToGoogle() {
