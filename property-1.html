@@ -353,7 +353,7 @@
                                 <h1 class="h1">Contact us</h1>
                                 <p class="p">Do you have a question? Send us a message and we will respond as soon as possible.</p>
                             </div>
-                            <form id="myForm">
+                            <!--<form id="myForm">
                                 <h4 class="h4">Name</h4>
                                 <input class="input" type="text" name="name">
                                 <h4 class="h4">Mobile No</h4>
@@ -363,7 +363,25 @@
                                 <h4 class="h4">Message</h4>
                                 <textarea class="input textarea"></textarea>
                                 <button onclick="SubForm()" class="button">Send</button>
-                            </form>
+                            </form>-->
+                            <fieldset>
+                                <form id="form" target="_self" onsubmit="" action="javascript: postToGoogle()">
+                                    <fieldset>
+                                        <legend>Name</legend>
+                                        <textarea name="Name"></textarea>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Email</legend>
+                                        <textarea name="Email"></textarea>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Phone No</legend>
+                                        <textarea name="Phone"></textarea>
+                                    </fieldset>
+                                    <br>
+                                    <button type="submit">Send</button>
+                                </form>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
@@ -492,34 +510,47 @@
             $(".custom-model-main").addClass('model-open');
         }
 
-        function SubForm() {
+        function postToGoogle() {
+            var field1 = $("[name='Name']").val();
+            var field2 = $("[name='Email']").val();
+            var field3 = $("[name='Phone']").val();
             $.ajax({
-                url: 'https://api.apispreadsheets.com/data/20850/',
-                type: 'post',
-                data: $("#myForm").serializeArray(),
-                success: function () {
-                    alert("Form Data Submitted :)")
+                url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSfs8xb2N2dJdSo8_6UhBpfxodvGcNQt-I1EFSY9S6qdUmHWSw/formResponse",
+                data: {
+                    "entry.938086087": field1,
+                    "entry.1520372004": field2,
+                    "entry.95449461": field3
                 },
-                error: function () {
-                    alert("There was an error :(")
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function (item) {
+                        //Success message
+                        console.log(item);
+                        alert("Success!");
+                    },
+                    200: function (item) {
+                        //Success Message
+                        console.log(item);
+                        alert("Success!");
+                    }
                 }
             });
         }
 
+        /*
+        $(document).ready(function() {
+           $('#form').submit(function() {
+             postToGoogle();
+             return false;
+           });
+        });
+        */
+
+
         $(document).ready(function () {
 
-            $(".Click-here").on('click', function () {
-                $(".custom-model-main").addClass('model-open');
-            });
-            $(".close-btn, .bg-overlay").click(function () {
-                $(".custom-model-main").removeClass('model-open');
-            });
-
-
-            $('.property-wrap').click(function (e) {
-                e.preventDefault();
-                $('.modal').toggleClass('is-visible');
-            });
+            
 
             var excelUrl = "assets/files/UID Plots.xlsx";
             var name = localStorage.getItem('orrs');
