@@ -451,6 +451,7 @@
 
         function openPopup(event) {
             $(".custom-model-main").addClass('model-open');
+            localStorage.setItem('visitlink', $($(event.currentTarget).parent().next()).val());
         }
 
         function closePopup () {
@@ -461,13 +462,14 @@
             var field1 = $("[name='Name']").val();
             var field2 = $("[name='Email']").val();
             var field3 = $("[name='Phone']").val();
+            
             $.ajax({
                 url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSfs8xb2N2dJdSo8_6UhBpfxodvGcNQt-I1EFSY9S6qdUmHWSw/formResponse",
                 data: {
                     "entry.938086087": field1,
                     "entry.1520372004": field2,
                     "entry.95449461": field3,
-                    "entry.2077672575": $($(event.currentTarget).parent().next()).val()
+                    "entry.2077672575": localStorage.getItem('visitlink')
                 },
                 type: "POST",
                 dataType: "xml",
@@ -477,12 +479,14 @@
                         console.log(item);
                         $(".custom-model-main").removeClass('model-open');
                         alert("Thanks for your details. We will get in touch!");
+                        localStorage.setItem('visitlink', '');
                     },
                     200: function (item) {
                         //Success Message
                         console.log(item);
                         $(".custom-model-main").removeClass('model-open');
                         alert("Thanks for your details. We will get in touch!");
+                        localStorage.setItem('visitlink', '');
                     }
                 }
             });
