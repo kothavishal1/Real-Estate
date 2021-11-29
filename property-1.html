@@ -541,7 +541,7 @@
                             $('#ProjectType', $clone).text(excelData[i].ProjectType);
                             $('.orig-price', $clone).text(excelData[i].AreaSqYards);
                             $('#clickDetails', $clone).attr("id", "clickDetails"+i);
-                            $('#clickDetails'+i).val(excelData[i].PlaceName + ', ' + excelData[i].ProjectType + ', ' + excelData[i].AreaSqYards);
+                            $('#clickDetails' + i, $clone).val(excelData[i].PlaceName + ', ' + excelData[i].ProjectType + ', ' + excelData[i].AreaSqYards);
                             var access = excelData[i].Accesability.split('~');
                             var time = excelData[i].Time.split('~');
                             for (var j = 0; j < access.length; j++) {
