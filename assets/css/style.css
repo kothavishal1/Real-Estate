@@ -4720,9 +4720,20 @@ form {
     height: 62px;
 }
 
+.img-fit {
+    width: 94%;
+    height: 82%;
+}
+
 @media all and (min-width:0px) and (max-width: 600px) {
     .container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
         margin-right: -15px;
         margin-left: -270px;
+    }
+
+    .img-fit {
+        width: 42%;
+        height: 242%;
+        margin-top: -24px;
     }
 }
