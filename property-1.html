@@ -270,68 +270,16 @@
                                 <!--<h3 class="ml-2">John Dorf</h3>-->
                             </div>
                             <!--<span class="text-right">2 weeks ago</span>-->
-                            <p onclick="openPopup()" class="mb-0"><a id="modal-toggle" onclick="openPopup()" class="btn1 btn-primary rounded">Visit Site</a></p>
-
-                            <!--<div class="wrapper">
-                                <button id="modal-toggle">Show modal</button>
-                            </div>-->
-                            <!--<div class="modal">
-                                <div class="modal-overlay modal-toggle"></div>
-                                <div class="modal-wrapper modal-transition">
-                                    <div class="modal-header">
-                                        <button class="modal-close modal-toggle"><svg class="icon-close icon" viewBox="0 0 32 32"><use xlink:href="#icon-close"></use></svg></button>
-                                        <h2 class="modal-heading">This is a modal</h2>
-                                    </div>
-
-                                    <div class="modal-body">
-                                        <div class="modal-content">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit eum delectus, libero, accusantium dolores inventore obcaecati placeat cum sapiente vel laboriosam similique totam id ducimus aperiam, ratione fuga blanditiis maiores.</p>
-                                            <button class="modal-toggle">Update</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>-->
+                            <p onclick="openPopup($event)" class="mb-0"><a id="modal-toggle" onclick="openPopup($event)" class="btn1 btn-primary rounded">Visit Site</a></p>
 
                         </div>
                         <h3 id="ProjectType" style="margin:0 0 10px"><a href="#">Sunny Loft Property</a></h3>
                         <span class="location" id="PlaceName"><i class="ion-ios-pin"></i> New York <span class="sale">Sale</span></span>
-                        <!--<ul class="property_list mt-3 mb-0" style="width: 117%;">
-                            <li><span class="flaticon-bed"><img src="assets/img/icon/bed-orange.png" /></span>3</li>
-                            <li><span class="flaticon-bathtub"><img src="assets/img/icon/shawer-orange.png" /></span>2</li>
-                            <li><span class="flaticon-blueprint"><img src="assets/img/icon/room-orange.png" /></span>1,878 sqft</li>
-                        </ul>-->
                         <div class="additional-details">
 
                             <h4 class="s-property-title">ACCESSIBILITY</h4>
 
                             <ul id="accessibility" class="additional-details-list clearfix">
-                                <!--<li>
-                                    <span class="col-xs-6 col-sm-8 add-d-title">Waterfront</span>
-                                    <span class="col-xs-6 col-sm-6 col-md-2 add-d-entry">Yes</span>
-                                </li>-->
-                                <!--<li>
-                                    <span class="col-xs-6 col-sm-8 add-d-title">Built In</span>
-                                    <span class="col-xs-6 col-sm-6 col-md-2 add-d-entry">2003</span>
-                                </li>
-                                <li>
-                                    <span class="col-xs-6 col-sm-8 add-d-title">Parking</span>
-                                    <span class="col-xs-6 col-sm-6 col-md-2 add-d-entry">2 Or More Spaces,Covered Parking,Valet Parking</span>
-                                </li>
-
-                                <li>
-                                    <span class="col-xs-6 col-sm-8 add-d-title">Waterfront</span>
-                                    <span class="col-xs-6 col-sm-6 col-md-2 add-d-entry">Yes</span>
-                                </li>
-
-                                <li>
-                                    <span class="col-xs-6 col-sm-8 add-d-title">View</span>
-                                    <span class="col-xs-6 col-sm-6 col-md-2 add-d-entry">Intracoastal View,Direct ew</span>
-                                </li>
-
-                                <li>
-                                    <span class="col-xs-6 col-sm-8 add-d-title">Waterfront Description:</span>
-                                    <span class="col-xs-6 col-sm-6 col-md-2 add-d-entry">Intracoastal Front,Ocean Access</span>
-                                </li>-->
 
                             </ul>
                         </div>
@@ -501,7 +449,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script>
 
-        function openPopup() {
+        function openPopup(event) {
             $(".custom-model-main").addClass('model-open');
         }
 
