@@ -4719,14 +4719,3 @@ form {
 .textarea {
     height: 62px;
 }
-
-.button {
-    height: 42px;
-    width: 60%;
-    margin: 24px auto;
-    border-radius: 6px;
-    border: none;
-    color: white;
-    background: linear-gradient(to left bottom, #000046, #5B86E5);
-    cursor: pointer;
-}
