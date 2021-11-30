@@ -260,7 +260,8 @@
         <div id="itemforClone" class="row">
             <div class="col-md-3 wow fadeInLeft" data-wow-delay="0.2s">
                 <div class="property-wrap" style="box-shadow: 6px 7px 19px;">
-                    <a id="land-image" href="#" class="img img-property" >
+                    <a  href="#" class="img img-property">
+                        <img id="land-image" src="http://4.bp.blogspot.com/-dW5NN1oMwX4/T8x6eRVUSJI/AAAAAAAACZQ/W3J78kVu44w/s640/jQuery_Top_5_Sliders_2.PNG" />
                         <p class="price"><span class="orig-price">$300,000</span></p>
                     </a>
                     <div class="text">
@@ -547,7 +548,8 @@
                             $('.orig-price', $clone).text(excelData[i].AreaSqYards);
                             $('#clickDetails', $clone).attr("id", "clickDetails" + i);
                             var imgUrl = "url(" + 'assets/img' + excelData[i].PlotImages + ".jpg" + ")";
-                            $("#land-image", $clone).css({ "background-image": imgUrl});
+                            //$("#land-image", $clone).css({ "background-image": imgUrl });
+                            $("#land-image", $clone).attr("src", imgUrl);
                             $('#clickDetails' + i, $clone).val(excelData[i].PlaceName + ', ' + excelData[i].ProjectType + ', ' + excelData[i].AreaSqYards);
                             var access = excelData[i].Accesability.split('~');
                             var time = excelData[i].Time.split('~');
