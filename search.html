@@ -559,7 +559,7 @@
                             var imgUrl = 'assets/img' + excelData[i].PlotImages + ".jpg";
                             //$("#land-image", $clone).css({ "background-image": imgUrl });
                             $("#land-image", $clone).attr("src", imgUrl);
-                            $("#a-land-image", $clone).css('background-image', imgUrl);
+                            $("#a-land-image", $clone).css('background-image', "url(" + imgUrl + ")");
                             var access = excelData[i].Accesability.split('~');
                             var time = excelData[i].Time.split('~');
                             for (var j = 0; j < access.length; j++) {
