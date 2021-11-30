@@ -547,7 +547,7 @@
                             $('#ProjectType', $clone).text(excelData[i].ProjectType);
                             $('.orig-price', $clone).text(excelData[i].AreaSqYards);
                             $('#clickDetails', $clone).attr("id", "clickDetails" + i);
-                            var imgUrl = "url(" + 'assets/img' + excelData[i].PlotImages + ".jpg" + ")";
+                            var imgUrl = 'assets/img' + excelData[i].PlotImages + ".jpg";
                             //$("#land-image", $clone).css({ "background-image": imgUrl });
                             $("#land-image", $clone).attr("src", imgUrl);
                             $('#clickDetails' + i, $clone).val(excelData[i].PlaceName + ', ' + excelData[i].ProjectType + ', ' + excelData[i].AreaSqYards);
