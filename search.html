@@ -537,7 +537,7 @@
 
                         //Read all rows from First Sheet into an JSON array.
                         var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[firstSheet]);
-                        var excelData = excelRows.filter(item => item.includes(d.propertytype.replace(/[+!'()*]/g, ' ')));
+                        var excelData = excelRows.filter(item => item.ProjectType.includes(d.propertytype.replace(/[+!'()*]/g, ' ')));
 
                         //$("#itemforClone").clone().appendTo("#dvExcel")
 
