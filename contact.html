@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
- <!--<![endif]-->
+<!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -248,7 +248,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" ><i class="fa fa-envelope-o"></i> Send message</button><br/><br/>
+                                    <button type="submit"><i class="fa fa-envelope-o"></i> Send message</button><br /><br />
                                 </div>
                             </div>
                             <!-- /.row -->
@@ -308,11 +308,11 @@
                                 <div class="footer-title-line"></div>
                                 <p>Make Sure to Subscribe to find right properties in Hyderabad.</p>
 
-                                <form>
+                                <form id="form" target="_self" onsubmit="" action="javascript: postToGoogle(true)">
                                     <div class="input-group">
-                                        <input class="form-control" type="text" placeholder="E-mail ... ">
+                                        <input class="form-control" type="text" name="emailfromstayintouch" placeholder="E-mail ... ">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-primary subscribe" type="button"><i class="pe-7s-paper-plane pe-2x"></i></button>
+                                            <button class="btn btn-primary subscribe" type="submit"><i class="pe-7s-paper-plane pe-2x"></i></button>
                                         </span>
                                     </div>
                                     <!-- /input-group -->
@@ -375,11 +375,21 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-        function postToGoogle() {
-            var field1 = $("[name='firstName']").val() + ' ' + $("[name='lastName']").val();
-            var field2 = $("[name='email']").val();
-            var field3 = $("[name='phoneno']").val();
-            var field4 = $("[name='message']").val();
+        function postToGoogle(flag) {
+
+            var field1='', field2='', field3='', field4='';
+
+            if (flag) {
+                field1 = $("[name='emailfromstayintouch']").val();
+                field4 = "Data from Stay in Touch ";
+            }
+            else {
+                field1 = $("[name='firstName']").val() + ' ' + $("[name='lastName']").val();
+                field2 = $("[name='email']").val();
+                field3 = $("[name='phoneno']").val();
+                field4 = $("[name='message']").val();
+            }
+
 
             $.ajax({
                 url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSfs8xb2N2dJdSo8_6UhBpfxodvGcNQt-I1EFSY9S6qdUmHWSw/formResponse",
