@@ -400,11 +400,11 @@
                             <div class="footer-title-line"></div>
                             <p>Make Sure to Subscribe to find right properties in Hyderabad.</p>
 
-                            <form>
+                            <form id="form" target="_self" onsubmit="" action="javascript: postToGoogle(true)">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" placeholder="E-mail ... ">
+                                    <input class="form-control" type="text" name="emailfromstayintouch" placeholder="E-mail ... ">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary subscribe" type="button"><i class="pe-7s-paper-plane pe-2x"></i></button>
+                                        <button class="btn btn-primary subscribe" type="submit"><i class="pe-7s-paper-plane pe-2x"></i></button>
                                     </span>
                                 </div>
                                 <!-- /input-group -->
@@ -467,10 +467,19 @@
             return vars;
         }
 
-        function postToGoogle() {
-            var field1 = $("[name='Name']").val();
-            var field2 = $("[name='Email']").val();
-            var field3 = $("[name='Phone']").val();
+        function postToGoogle(flag) {
+
+            var field1 = '', field2 = '', field3 = '', field4 = '';
+
+            if (flag) {
+                field1 = $("[name='emailfromstayintouch']").val();
+                field4 = "Data from Stay in Touch ";
+            }
+            else {
+                field1 = $("[name='Name']").val();
+                field2 = $("[name='Email']").val();
+                field3 = $("[name='Phone']").val();
+            }
 
             $.ajax({
                 url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSfs8xb2N2dJdSo8_6UhBpfxodvGcNQt-I1EFSY9S6qdUmHWSw/formResponse",

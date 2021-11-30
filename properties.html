@@ -344,11 +344,11 @@
                             <div class="footer-title-line"></div>
                             <p>Make Sure to Subscribe to find right properties in Hyderabad.</p>
 
-                            <form>
+                            <form id="form" target="_self" onsubmit="" action="javascript: postToGoogle(true)">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" placeholder="E-mail ... ">
+                                    <input class="form-control" type="text" name="emailfromstayintouch" placeholder="E-mail ... ">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary subscribe" type="button"><i class="pe-7s-paper-plane pe-2x"></i></button>
+                                        <button class="btn btn-primary subscribe" type="submit"><i class="pe-7s-paper-plane pe-2x"></i></button>
                                     </span>
                                 </div>
                                 <!-- /input-group -->
@@ -401,5 +401,51 @@
     <script src="assets/js/icheck.min.js"></script>
     <script src="assets/js/price-range.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function postToGoogle(flag) {
+
+            var field1 = '', field2 = '', field3 = '', field4 = '';
+
+            if (flag) {
+                field1 = $("[name='emailfromstayintouch']").val();
+                field4 = "Data from Stay in Touch ";
+            }
+            else {
+                field1 = $("[name='firstName']").val() + ' ' + $("[name='lastName']").val();
+                field2 = $("[name='email']").val();
+                field3 = $("[name='phoneno']").val();
+                field4 = $("[name='message']").val();
+            }
+
+
+            $.ajax({
+                url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLSfs8xb2N2dJdSo8_6UhBpfxodvGcNQt-I1EFSY9S6qdUmHWSw/formResponse",
+                data: {
+                    "entry.938086087": field1,
+                    "entry.1520372004": field2,
+                    "entry.95449461": field3,
+                    "entry.2077672575": field4 == '' ? 'Reached out to us from Contact us Page' : field4
+                },
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function (item) {
+                        //Success message
+                        console.log(item);
+                        $(".custom-model-main").removeClass('model-open');
+                        alert("Thanks for your details. We will get in touch!");
+                        localStorage.setItem('visitlink', '');
+                    },
+                    200: function (item) {
+                        //Success Message
+                        console.log(item);
+                        $(".custom-model-main").removeClass('model-open');
+                        alert("Thanks for your details. We will get in touch!");
+                        localStorage.setItem('visitlink', '');
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
