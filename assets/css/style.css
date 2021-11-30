@@ -4741,3 +4741,7 @@ a {
 a {
     text-decoration: none;
 }
+
+.btn .bs-caret {
+    display: none;
+}
