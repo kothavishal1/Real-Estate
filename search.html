@@ -569,7 +569,8 @@
                             var imgUrl = 'assets/img' + excelData[i].PlotImages + ".jpg";
                             //$("#land-image", $clone).css({ "background-image": imgUrl });
                             $("#land-image", $clone).attr("src", imgUrl);
-                            $("#a-land-image", $clone).css('background-image', "url(" + imgUrl + ")");
+                            //$("#a-land-image", $clone).css('background-image', "url(" + imgUrl + ")");
+                            $('#a-land-image').css('background-image', 'url(' + imageUrl + ')');
                             var access = excelData[i].Accesability.split('~');
                             var time = excelData[i].Time.split('~');
                             for (var j = 0; j < access.length; j++) {
@@ -619,32 +620,7 @@
                     $('#image-gallery').removeClass('cS-hidden');
                 }
             });
-            // Quick & dirty toggle to demonstrate modal toggle behavior
-
-
-
-            function ProcessData(excelRows) {
-                for (var i = 0; i < excelRows.length; i++) {
-
-                    //$("#itemforClone").clone().appendTo("#dvExcel")
-
-                    var $clone = $($('#itemforClone').html());
-                    $('#PRODUCTNAME', $clone).text(excelRows[i].PlaceName);
-                    $('#ProjectType', $clone).text(excelRows[i].ProjectType);
-                    $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
-                    $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
-                    $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
-                    $('#Area(SqYards)', $clone).text(excelRows[i].Area(SqYards));
-
-                    //$('.MDT', $clone).text(mdtValue);
-                    //$('.MWT', $clone).text(mwtValue);
-
-                    // Do something with the clone
-                    $('#dvExcel').append($clone);
-
-
-                }
-            }
+            
 
             function ProcessExcel(data, excelRows) {
 
