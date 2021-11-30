@@ -546,8 +546,7 @@
                             $('#ProjectType', $clone).text(excelData[i].ProjectType);
                             $('.orig-price', $clone).text(excelData[i].AreaSqYards);
                             $('#clickDetails', $clone).attr("id", "clickDetails" + i);
-                            $('#land - image', $clone).attr("src", excelData[i].PlotImages+".jpeg");
-                            
+                            $("#land-image", $clone).css({ "background-image": "url(" + 'assets/img/UID plot images/" + excelData[i].PlotImages + ".jpg"' + ")" });
                             $('#clickDetails' + i, $clone).val(excelData[i].PlaceName + ', ' + excelData[i].ProjectType + ', ' + excelData[i].AreaSqYards);
                             var access = excelData[i].Accesability.split('~');
                             var time = excelData[i].Time.split('~');
