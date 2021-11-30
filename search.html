@@ -261,12 +261,10 @@
         <div id="itemforClone" class="row">
             <div class="col-md-3 wow fadeInLeft" data-wow-delay="0.2s">
                 <div class="property-wrap" style="box-shadow: 6px 7px 19px;">
-                    <div id="a-land-image">
-                        <a href="#" class="img img-property">
+                        <a href="#" id="a-land-image" class="img img-property">
                             <img id="land-image" src="http://4.bp.blogspot.com/-dW5NN1oMwX4/T8x6eRVUSJI/AAAAAAAACZQ/W3J78kVu44w/s640/jQuery_Top_5_Sliders_2.PNG" />
                             <p class="price"><span class="orig-price">$300,000</span></p>
                         </a>
-                    </div>
                     <div class="text">
                         <div class="list-team d-flex align-items-center mb-4">
                             <div class="d-flex align-items-center">
@@ -566,11 +564,13 @@
                             $('.orig-price', $clone).text(excelData[i].AreaSqYards);
                             $('#clickDetails', $clone).attr("id", "clickDetails"+i);
                             $('#clickDetails' + i, $clone).val(excelData[i].PlaceName + ', ' + excelData[i].ProjectType + ', ' + excelData[i].AreaSqYards);
-                            var imgUrl = 'assets/img' + excelData[i].PlotImages + ".jpg";
+                            var imgUrl = encodeURI('assets/img' + excelData[i].PlotImages + ".jpg");
                             //$("#land-image", $clone).css({ "background-image": imgUrl });
                             $("#land-image", $clone).attr("src", imgUrl);
                             //$("#a-land-image", $clone).css('background-image', "url(" + imgUrl + ")");
-                            $('#a-land-image', $clone).css('background-image', 'url(' + imgUrl + ')');
+                            $('#a-land-image', $clone).css({
+                                'background-image': "url(" + imgUrl + ")",
+                                'background-size': 100% 100% });
                             var access = excelData[i].Accesability.split('~');
                             var time = excelData[i].Time.split('~');
                             for (var j = 0; j < access.length; j++) {
